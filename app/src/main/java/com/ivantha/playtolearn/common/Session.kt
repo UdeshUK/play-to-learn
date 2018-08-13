@@ -36,7 +36,7 @@ object Session {
 
     private fun setLevelCount() {
         firebaseDatabase.getReference("level_info/count").addValueEventListener(object : ValueEventListener {
-            override fun onDataChange(dataSnapshot: DataSnapshot?) {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
                 if (dataSnapshot!!.value != null) {
                     levelCount = dataSnapshot.value.toString().toInt()
                 }
@@ -50,8 +50,8 @@ object Session {
 
     private fun setEnabledLevelCount() {
         firebaseDatabase.getReference("players/${currentUser!!.uid}/enabled_level_Count").addValueEventListener(object : ValueEventListener {
-            override fun onDataChange(dataSnapshot: DataSnapshot?) {
-                if (dataSnapshot!!.value != null) {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                if (dataSnapshot.value != null) {
                     enabledLevelCount = dataSnapshot.value.toString().toInt()
                 }
             }

@@ -3,7 +3,7 @@ package com.ivantha.playtolearn.widget
 import android.content.Context
 import android.graphics.Color
 import android.graphics.Typeface
-import android.support.v7.widget.SwitchCompat
+import androidx.appcompat.widget.SwitchCompat
 import android.util.AttributeSet
 import com.ivantha.playtolearn.R
 

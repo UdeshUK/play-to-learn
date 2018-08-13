@@ -2,8 +2,8 @@ package com.ivantha.playtolearn.adapter
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import android.support.v7.widget.AppCompatImageButton
-import android.support.v7.widget.RecyclerView
+import androidx.appcompat.widget.AppCompatImageButton
+import androidx.recyclerview.widget.RecyclerView
 import android.view.*
 import android.widget.TextView
 import android.widget.Toast
@@ -98,7 +98,7 @@ class TileRecyclerAdapter(var board: Board,
             })
 
             // When the pointer is dragged over a tile
-            tileFrameLayout.setOnDragListener { v, event ->
+            tileFrameLayout.setOnDragListener { _, event ->
                 if (event.action == DragEvent.ACTION_DROP) {
                     var previousTile = board.tileGrid[board.currentX][board.currentY]
 

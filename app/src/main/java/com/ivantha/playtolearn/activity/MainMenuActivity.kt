@@ -2,7 +2,7 @@ package com.ivantha.playtolearn.activity
 
 import android.content.Intent
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.database.FirebaseDatabase
 import com.ivantha.playtolearn.R
 import com.ivantha.playtolearn.common.FirebaseSaveHelper

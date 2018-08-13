@@ -33,12 +33,12 @@ object FirebaseSaveHelper {
 
     fun continueLevel(uid: String, levelId: Int, onCompleteTask: () -> Unit) {
         FirebaseDatabase.getInstance().getReference("players/$uid/save_data/$levelId").addValueEventListener(object : ValueEventListener {
-            override fun onDataChange(dataSnapshot: DataSnapshot?) {
-                Session.saveFile = dataSnapshot!!.getValue(SaveFile::class.java)
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                Session.saveFile = dataSnapshot.getValue(SaveFile::class.java)
                 retrieveQuestions(levelId, onCompleteTask)
             }
 
-            override fun onCancelled(error: DatabaseError?) {
+            override fun onCancelled(error: DatabaseError) {
                 TODO("Not implemented")
             }
         })
@@ -56,17 +56,17 @@ object FirebaseSaveHelper {
         Session.questions.clear()
 
         FirebaseDatabase.getInstance().getReference("levels/$levelId/questions").addValueEventListener(object : ValueEventListener {
-            override fun onDataChange(dataSnapshot: DataSnapshot?) {
-                for (child in dataSnapshot!!.children) {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                for (child in dataSnapshot.children) {
                     var question = child.getValue(Question::class.java)
                     println("____________________________________________________")
                     println(question!!.description)
-                    Session.questions.add(question!!)
+                    Session.questions.add(question)
                     onCompleteTask()
                 }
             }
 
-            override fun onCancelled(error: DatabaseError?) {
+            override fun onCancelled(error: DatabaseError) {
                 TODO("Not implemented")
             }
         })

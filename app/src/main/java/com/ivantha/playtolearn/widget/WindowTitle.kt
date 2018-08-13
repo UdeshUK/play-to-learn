@@ -7,7 +7,7 @@ import android.util.AttributeSet
 
 import com.ivantha.playtolearn.R
 
-class WindowTitle : android.support.v7.widget.AppCompatButton {
+class WindowTitle : androidx.appcompat.widget.AppCompatButton {
 
     init {
         setBackgroundResource(R.drawable.common_window_title)

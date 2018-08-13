@@ -5,7 +5,7 @@ import android.util.AttributeSet
 import com.ivantha.playtolearn.common.Font
 
 
-class LabelTextView : android.support.v7.widget.AppCompatTextView {
+class LabelTextView : androidx.appcompat.widget.AppCompatTextView {
 
     init {
         val customFont = Font.getTypeface(Font.ACTION_MAN_BOLD_FONT, context)

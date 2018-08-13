@@ -1,9 +1,9 @@
 package com.ivantha.playtolearn.activity
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.GridLayoutManager
-import android.support.v7.widget.LinearLayoutManager
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.ivantha.playtolearn.R
 import com.ivantha.playtolearn.adapter.LevelRecyclerAdapter
 import com.ivantha.playtolearn.common.Session
