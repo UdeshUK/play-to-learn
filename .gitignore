@@ -100,6 +100,7 @@ obj/
 /out/
 
 # User-specific configurations
+.idea
 .idea/libraries/
 .idea/.name
 .idea/compiler.xml
