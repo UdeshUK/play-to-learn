@@ -37,13 +37,13 @@ object Session {
     private fun setLevelCount() {
         firebaseDatabase.getReference("level_info/count").addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
-                if (dataSnapshot!!.value != null) {
+                if (dataSnapshot.value != null) {
                     levelCount = dataSnapshot.value.toString().toInt()
                 }
             }
 
             override fun onCancelled(error: DatabaseError) {
-                TODO("Not implemented")
+                levelCount = 5
             }
         })
     }
@@ -57,7 +57,7 @@ object Session {
             }
 
             override fun onCancelled(error: DatabaseError) {
-                TODO("Not implemented")
+                enabledLevelCount = 0
             }
         })
     }
