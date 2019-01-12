@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.ivantha.playtolearn.R
 import com.ivantha.playtolearn.adapter.LevelRecyclerAdapter
 import com.ivantha.playtolearn.common.Session
@@ -20,7 +21,7 @@ class LevelsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_levels)
 
-        var gridLayoutManager = GridLayoutManager(this, 5, LinearLayoutManager.VERTICAL, false)
+        var gridLayoutManager = GridLayoutManager(this, 5, RecyclerView.VERTICAL, false)
 
         levelsRecyclerView.layoutManager = gridLayoutManager
         levelsRecyclerView.setHasFixedSize(true)
@@ -34,8 +35,10 @@ class LevelsActivity : AppCompatActivity() {
         }
 
         // Set enabled levels
-        for (i in 0..(Session.enabledLevelCount - 1)) {
-            levels[i].enabled = true
+        if (levels.isNotEmpty()) {
+            for (i in 0..(Session.enabledLevelCount - 1)) {
+                levels[i].enabled = true
+            }
         }
 
         levelsRecyclerView.adapter = levelRecyclerAdapter
